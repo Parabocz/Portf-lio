@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import ProfileCard from "./ProfileCard";
-import { business, waLink, waMessages } from "@/lib/content";
+import { waLink, waMessages } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -20,7 +20,7 @@ export default function About() {
           <ProfileCard
             avatarUrl="/gustavo-avatar.png"
             miniAvatarUrl="/gustavo-avatar.png"
-            name={business.name}
+            name=""
             title=""
             handle="gustavoparabocz"
             status="Disponível para novos projetos"

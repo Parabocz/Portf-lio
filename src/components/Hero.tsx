@@ -9,15 +9,28 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 function getGridProps() {
   if (typeof window === "undefined") {
-    return { gridSize: 12, rippleIntensity: 0.04, mouseInteraction: true, opacity: 0.5 };
+    return { gridSize: 8, rippleIntensity: 0.06, mouseInteraction: true, opacity: 0.68, gridThickness: 16, glowIntensity: 0.3 };
   }
   const isSmall = window.innerWidth < 768;
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (isSmall) {
+    return {
+      gridSize: 8,
+      rippleIntensity: prefersReduced ? 0 : 0.03,
+      mouseInteraction: false,
+      opacity: 0.35,
+      gridThickness: 13,
+      glowIntensity: 0.18,
+    };
+  }
+  // Desktop: bigger, more prominent grid — larger cells, stronger ripple/glow.
   return {
-    gridSize: isSmall ? 8 : 12,
-    rippleIntensity: prefersReduced ? 0 : isSmall ? 0.03 : 0.04,
-    mouseInteraction: !isSmall && !prefersReduced,
-    opacity: isSmall ? 0.35 : 0.5,
+    gridSize: 8,
+    rippleIntensity: prefersReduced ? 0 : 0.06,
+    mouseInteraction: !prefersReduced,
+    opacity: 0.68,
+    gridThickness: 16,
+    glowIntensity: 0.3,
   };
 }
 
@@ -29,10 +42,8 @@ export default function Hero() {
       <div className="absolute inset-0">
         <RippleGrid
           gridColor="#7C3AED"
-          gridThickness={13}
           fadeDistance={1.4}
           vignetteStrength={2.2}
-          glowIntensity={0.18}
           {...gridProps}
         />
       </div>

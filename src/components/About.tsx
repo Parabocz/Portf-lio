@@ -49,6 +49,11 @@ export default function About() {
               é quem escreve, testa e entrega o código.
             </p>
             <p>
+              Também sou estudante de Engenharia de Produção na Universidade Tecnológica Federal
+              do Paraná (UTFPR) — é de lá que vem a disciplina de processo que você vê na seção
+              abaixo: escopo fechado, prazo real e checkpoints, não promessa vaga.
+            </p>
+            <p>
               Trabalho em sites institucionais, e-commerce, sistemas web e desktop — e uso as
               mesmas ferramentas que ofereço aos meus clientes no meu próprio negócio. O{" "}
               <a href="#portfolio" className="text-ink underline decoration-violet/50 underline-offset-4 hover:text-violet">

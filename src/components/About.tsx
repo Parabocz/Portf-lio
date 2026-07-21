@@ -21,7 +21,7 @@ export default function About() {
             avatarUrl="/gustavo-avatar.png"
             miniAvatarUrl="/gustavo-avatar.png"
             name={business.name}
-            title={business.role}
+            title=""
             handle="gustavoparabocz"
             status="Disponível para novos projetos"
             contactText="Chamar no WhatsApp"

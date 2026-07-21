@@ -18,8 +18,8 @@ export default function About() {
           className="mx-auto w-full max-w-xs lg:max-w-none"
         >
           <ProfileCard
-            avatarUrl="/avatar-monogram.svg"
-            miniAvatarUrl="/avatar-monogram.svg"
+            avatarUrl="/gustavo-avatar.png"
+            miniAvatarUrl="/gustavo-avatar.png"
             name={business.name}
             title={business.role}
             handle="gustavoparabocz"

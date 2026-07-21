@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export default function Process() {
   return (
     <section id="processo" className="grid-rule bg-void py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+      <div className="mx-auto max-w-6xl px-6 lg:max-w-7xl lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export default function Process() {
           </h2>
         </motion.div>
 
-        <div className="relative mt-14 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-14 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
           <div className="pointer-events-none absolute left-0 right-0 top-[26px] hidden h-px bg-border lg:block" />
           {process.map((item, i) => (
             <motion.div

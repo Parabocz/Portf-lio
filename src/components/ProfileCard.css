@@ -48,7 +48,7 @@
     transparent var(--behind-glow-size)
   );
   filter: blur(50px) saturate(1.1);
-  opacity: calc(0.8 * var(--card-opacity));
+  opacity: calc(0.35 * var(--card-opacity));
   transition: opacity 200ms ease;
 }
 
@@ -178,7 +178,7 @@
 
 .pc-card:hover .pc-shine,
 .pc-card.active .pc-shine {
-  filter: brightness(0.85) contrast(1.5) saturate(0.5);
+  filter: brightness(0.6) contrast(1.15) saturate(0.35);
   animation-play-state: paused;
 }
 

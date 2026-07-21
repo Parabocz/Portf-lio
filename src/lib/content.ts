@@ -1,8 +1,8 @@
 export const business = {
   name: "Gustavo Parabocz",
   role: "Criação de Sites e Aplicativos",
-  whatsappNumber: "5542999569470",
-  phoneDisplay: "(42) 99956-9470",
+  whatsappNumber: "5542999568947",
+  phoneDisplay: "(42) 99956-8947",
 } as const;
 
 export function waLink(message: string) {
@@ -57,6 +57,14 @@ export const services: Service[] = [
     description:
       "Site antigo, lento ou quebrado em algum navegador? Eu assumo, diagnostico e entrego de novo — sem começar do zero à toa.",
     bullets: ["Auditoria de performance e código", "Modernização sem perder o que já rankeia", "Migração sem downtime"],
+  },
+  {
+    id: "hospedagem",
+    eyebrow: "// 05",
+    title: "Hospedagem própria",
+    description:
+      "Seu site fica no meu próprio host, não terceirizado — um único responsável do domínio à entrega, sem intermediário para empurrar o problema.",
+    bullets: ["Suporte direto comigo, sem chamado em fila", "Mais controle sobre performance e segurança", "Sem depender de painel de terceiro pra resolver"],
   },
 ];
 

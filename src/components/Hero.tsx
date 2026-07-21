@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/20 via-void/40 to-void" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 lg:max-w-7xl lg:px-10">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
-          className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.08] text-ink sm:text-5xl lg:text-6xl"
+          className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.08] text-ink sm:text-5xl lg:max-w-4xl lg:text-6xl xl:text-7xl"
         >
           Sites e aplicativos <span className="text-gradient">sob medida</span>, prontos pra converter.
         </motion.h1>
@@ -61,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
-          className="mt-6 max-w-xl text-base leading-relaxed text-ink-muted lg:text-lg"
+          className="mt-6 max-w-xl text-base leading-relaxed text-ink-muted lg:max-w-2xl lg:text-lg"
         >
           Eu projeto e desenvolvo do zero — sem template, sem atalho. Cada projeto é código
           pensado pro seu negócio, do primeiro pixel ao deploy.

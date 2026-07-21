@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export default function Portfolio() {
   return (
     <section id="portfolio" className="grid-rule bg-void py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+      <div className="mx-auto max-w-6xl px-6 lg:max-w-7xl lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
-          className="relative mt-12 overflow-hidden rounded-3xl border border-border bg-surface p-8 lg:p-12"
+          className="relative mt-12 overflow-hidden rounded-3xl border border-border bg-surface p-8 lg:p-14"
         >
           <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-indigo/20 blur-[100px]" />
           <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-violet/20 blur-[100px]" />

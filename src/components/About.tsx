@@ -9,13 +9,13 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export default function About() {
   return (
     <section id="sobre" className="grid-rule bg-void py-24 lg:py-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-[minmax(0,340px)_1fr] lg:px-10">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 lg:max-w-7xl lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-20 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="mx-auto w-full max-w-xs"
+          className="mx-auto w-full max-w-xs lg:max-w-none"
         >
           <ProfileCard
             avatarUrl="/avatar-monogram.svg"
@@ -25,8 +25,8 @@ export default function About() {
             handle="gustavoparabocz"
             status="Disponível para novos projetos"
             contactText="Chamar no WhatsApp"
-            behindGlowColor="rgba(124, 58, 237, 0.55)"
-            behindGlowSize="60%"
+            behindGlowColor="rgba(124, 58, 237, 0.22)"
+            behindGlowSize="55%"
             innerGradient="linear-gradient(145deg,#4f46e58c 0%,#7c3aed44 100%)"
             onContactClick={() => window.open(waLink(waMessages.about), "_blank", "noopener,noreferrer")}
           />
@@ -42,7 +42,7 @@ export default function About() {
           <h2 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
             Quem escreve o código é quem entrega o projeto.
           </h2>
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-muted lg:text-lg">
+          <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-ink-muted lg:max-w-2xl lg:text-lg">
             <p>
               Sou o Gustavo — desenvolvo sites e aplicativos sob medida, do briefing ao deploy.
               Sem agência no meio, sem terceirização: o mesmo desenvolvedor que conversa com você

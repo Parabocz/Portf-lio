@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gustavo Parabocz | Portfólio Premium</title>
+  <meta name="description" content="Portfólio de Gustavo Parabocz - Criação de sites de altíssimo padrão." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="/logo.png" alt="Gustavo Parabocz" class="logo-img">
+    </a>
+    <nav class="nav">
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      
+      <!-- Right Side / Base Layer (Forest / Art Direction) -->
+      <div class="hero-layer layer-base">
+        <div class="parallax-bg bg-forest" style="background-image: url('/mountain_forest.png')"></div>
+        <div class="bg-text right-text">
+          <h1>direção<br>de arte</h1>
+          <p><span>O refinamento visual que impressiona no primeiro scroll. Tipografia luxuosa, espaços em branco precisos e um design system digno das maiores premiações da web.</span></p>
+        </div>
+      </div>
+
+      <!-- Center Fixed Name (Always visible on top of everything) -->
+      <div class="hero-center-name">
+        <h2>Gustavo Parabocz</h2>
+        <p>Criação de sites de altíssimo padrão. Onde a estética encontra a engenharia.</p>
+      </div>
+
+      <!-- Left Side / Masked Top Layer (Snow / Engineering) -->
+      <div class="hero-layer layer-masked" id="panelLeft">
+        <div class="parallax-bg bg-snow" style="background-image: url('/mountain_snow.png')"></div>
+        <div class="bg-text left-text">
+          <h1>arquitetura<br>autoral</h1>
+          <p><span>Projetos construídos do zero, sem atalhos ou templates genéricos. Uma fundação de código purista, física de rolagem amanteigada e otimização levada ao extremo.</span></p>
+        </div>
+      </div>
+
+      <!-- Optional: A divider line to make the split even more pronounced -->
+      <div class="hero-divider" id="heroDivider"></div>
+    </section>
+
+    <section class="conversion-section" id="contato">
+      <div class="conversion-bg" style="background-image: url('/iceberg.png')"></div>
+      
+      <!-- Gradient overlay to ensure text readability -->
+      <div class="conversion-overlay"></div>
+
+      <div class="container conversion-content">
+        <div class="reveal-wrapper">
+          <h2 class="conversion-title reveal-target">O impacto está <br>na profundidade.</h2>
+        </div>
+        
+        <div class="reveal-wrapper">
+          <p class="conversion-sub reveal-target">A beleza superficial atrai, mas é a engenharia robusta sob a superfície que converte e sustenta impérios. Vamos construir a base sólida da sua autoridade digital.</p>
+        </div>
+        
+        <div class="btn-wrap reveal-fade" id="magneticWrap">
+          <a href="#" class="btn-magnetic" id="magneticBtn">
+            <span class="btn-text">[ INICIAR UM PROJETO PREMIUM ]</span>
+          </a>
+        </div>
+        
+        <div class="conversion-footer reveal-fade">
+          <p>© Gustavo Parabocz | Estética Awwwards & Performance Extrema</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

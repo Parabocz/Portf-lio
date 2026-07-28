@@ -1,0 +1,420 @@
+:root {
+  --bg-color: #ffffff;
+  --text-dark: #111111;
+  --text-light: #ffffff;
+  --green: #00ff55;
+  --green-dark: #00cc44;
+  --gray-1: #f9f9f9;
+  --gray-2: #f2f2f2;
+  --gray-3: #eaeaea;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Syne', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lenis Recommended */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Container */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+.header .logo-img {
+  height: 56px;
+  width: auto;
+  mix-blend-mode: overlay;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+  transition: opacity 0.3s ease;
+}
+.header .logo:hover .logo-img {
+  opacity: 0.8;
+}
+.header .nav {
+  display: flex;
+  gap: 2.5rem;
+}
+.header .nav a {
+  color: #fff;
+  mix-blend-mode: overlay;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+  text-shadow: none;
+}
+.header .nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+  mix-blend-mode: overlay;
+}
+.header .nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  cursor: ew-resize;
+  will-change: transform, opacity, filter;
+}
+
+.hero-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.layer-base {
+  z-index: 1;
+  background-color: #1a221a; 
+}
+
+.layer-masked {
+  z-index: 2;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  background-color: #2a3441; 
+}
+
+/* Hardware-accelerated parallax inner container */
+.parallax-bg {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%; 
+  height: 110%;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bg-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48vw; 
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 1; 
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOREST SIDE (Right)
+   ═══════════════════════════════════════════════════════════ */
+.bg-text.right-text {
+  right: 2vw; 
+  text-align: right;
+  align-items: flex-end;
+}
+.bg-text.right-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 5.5rem); 
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: overlay;
+}
+.bg-text.right-text p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 28vw;
+  text-shadow: none;
+}
+.bg-text.right-text p span {
+  /* IDENTICAL BLENDING MECHANISM AS HEADLINE */
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: overlay;
+  display: inline-block;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SNOW SIDE (Left)
+   ═══════════════════════════════════════════════════════════ */
+.bg-text.left-text {
+  left: 2vw; 
+  text-align: left;
+  align-items: flex-start;
+}
+.bg-text.left-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 5.5rem); 
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  /* Cores do céu com fade de transparência, replicando o estilo do parágrafo */
+  background: linear-gradient(180deg, rgba(219, 114, 85, 1) 0%, rgba(242, 184, 150, 0.3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: normal;
+}
+.bg-text.left-text p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.6;
+  max-width: 28vw;
+  text-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+.bg-text.left-text p span {
+  /* Degradê puxando as cores do pôr do sol com fade de transparência (de 100% para 30%) */
+  background: linear-gradient(180deg, rgba(219, 114, 85, 1) 0%, rgba(242, 184, 150, 0.3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: normal;
+  /* Sombra suave e natural para desgrudar tanto da rocha escura quanto da neve clara */
+  filter: drop-shadow(0 2px 6px rgba(25, 20, 25, 0.4));
+  display: inline-block;
+}
+
+/* Center Fixed Name (Top) */
+.hero-center-name {
+  position: absolute;
+  top: 3.5rem; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  color: #fff;
+  mix-blend-mode: overlay;
+  text-shadow: none;
+}
+.hero-center-name h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.hero-center-name p {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Optional divider line */
+.hero-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  z-index: 11;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONVERSION SECTION (FINAL)
+   ═══════════════════════════════════════════════════════════ */
+.conversion-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0a0f16;
+}
+
+.conversion-bg {
+  position: absolute;
+  top: -5%; left: -5%; width: 110%; height: 110%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  will-change: transform;
+}
+
+.conversion-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(10,15,22,0.1) 0%, rgba(10,15,22,0.8) 100%);
+  z-index: 1;
+}
+
+.conversion-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0 5rem 0;
+  color: #fff;
+  width: 100%;
+}
+
+.conversion-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 0;
+  text-shadow: none;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: overlay;
+}
+
+.conversion-sub {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: overlay;
+}
+
+.btn-wrap {
+  display: inline-block;
+  padding: 2rem;
+  margin-bottom: 5rem;
+}
+.btn-magnetic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  padding: 1.5rem 3.5rem;
+  border-radius: 100px;
+  transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+.btn-magnetic:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 15px 40px rgba(255,255,255,0.2);
+}
+.btn-text {
+  pointer-events: none;
+}
+
+.conversion-footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  padding-top: 3rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+.conversion-footer p {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: overlay;
+}
+
+/* Animations CSS */
+.reveal-wrapper {
+  overflow: hidden;
+  margin-bottom: 2.5rem; /* Transfer margin from title */
+}
+.conversion-title {
+  margin-bottom: 0; /* Reset */
+}
+.conversion-sub {
+  margin-bottom: 0; /* Reset */
+}
+.reveal-wrapper:nth-of-type(2) {
+  margin-bottom: 5rem; /* The subtitle wrapper */
+}
+.reveal-target {
+  will-change: transform, opacity;
+}
+.reveal-fade {
+  will-change: opacity, transform;
+}

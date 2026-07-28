@@ -31,6 +31,8 @@ gsap.set([leftTextP, rightTextP], { opacity: 0 })
 
 if (hero && panelLeft) {
   hero.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 768) return; // Disable hover logic on mobile
+    
     const isLeft = e.clientX < window.innerWidth / 2;
     const xPercent = isLeft ? 100 : 0;
     
@@ -80,6 +82,8 @@ if (hero && panelLeft) {
   });
   
   hero.addEventListener('mouseleave', () => {
+    if (window.innerWidth <= 768) return; // Disable on mobile
+
     gsap.to(panelLeft, {
       clipPath: `polygon(0 0, 50% 0, 50% 100%, 0 100%)`,
       duration: 1.2,
@@ -220,6 +224,8 @@ const convContent = document.querySelector('.conversion-content');
 
 if (convSection && convBg && convContent) {
   convSection.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 768) return; // Disable on mobile
+
     // Normalize mouse coordinates from -1 to 1 based on viewport
     const x = (e.clientX / window.innerWidth - 0.5) * 2;
     const y = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -243,6 +249,8 @@ if (convSection && convBg && convContent) {
 
   // Reset positions when mouse leaves the section
   convSection.addEventListener('mouseleave', () => {
+    if (window.innerWidth <= 768) return; // Disable on mobile
+
     gsap.to([convBg, convContent], {
       x: 0, y: 0, duration: 1, ease: 'power2.out'
     });
